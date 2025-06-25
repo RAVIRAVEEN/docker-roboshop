@@ -46,13 +46,15 @@ services:
   #     RABBITMQ_DEFAULT_USER =
   #     RABBITMQ_DEFAULT_PASS =
     
-  # shipping:
-  #      image: shipping:v1 
-  #      container_name: shipping 
+  shipping:
+       image: shipping:v1 
+       container_name: shipping 
+       depends_on:
+        - mysql
      
-  # mysql:
-  #     image: mysql:v1 
-  #     container_name: mysql
+  mysql:
+      image: mysql:v1 
+      container_name: mysql
 
 
   web:
