@@ -17,18 +17,22 @@ services:
     depends_on:
       - mongodb
 
-  # cart:
-  #   image: cart:v1 
-  #   container_name: cart
-  #   depends_on:
-  #     - web
+  cart:
+    image: cart:v1 
+    container_name: cart
+    depends_on:
+      - redis 
+      - catalogue
 
-  # redis:
-  #   image: redis 
+  redis:
+    image: redis 
     
-  # user: 
-  #   image: user:v1 
-  #   container_name: user
+  user: 
+    image: user:v1 
+    container_name: user
+    depends_on:
+      - redis
+      - mongodb
 
   # payment:
   #     image: payment:v1 
