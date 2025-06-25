@@ -63,6 +63,10 @@ services:
    container_name: web
    depends_on:
    - catalogue
+   - user
+   - cart
+   - payment
+   - shipping
 
    ports:
      - "80:80"
