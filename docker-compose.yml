@@ -34,17 +34,18 @@ services:
       - redis
       - mongodb
 
-  # payment:
-  #     image: payment:v1 
-  #     container_name: payment
-  #     depends_on:
-  #     - rabbitmq
+  payment:
+      image: payment:v1 
+      container_name: payment
+      depends_on:
+      - rabbitmq
 
-  # rabbitmq :
-  #   image: rabbitmq
-  #   env:
-  #     RABBITMQ_DEFAULT_USER =
-  #     RABBITMQ_DEFAULT_PASS =
+  rabbitmq :
+    image: rabbitmq
+    environment:
+      - name=value
+      - RABBITMQ_DEFAULT_USER = roboshop
+      - RABBITMQ_DEFAULT_PASS = roboshop123
     
   shipping:
        image: shipping:v1 
